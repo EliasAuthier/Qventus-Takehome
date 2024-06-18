@@ -25,11 +25,47 @@ Let's also install the mariadb-cli, needed by Django in order to stablish sessio
 
 > sudo apt install mariadb-client-core-10.6
 
-Note: More installations might be needed to run the application depending on your OS. Feel free to install them as required.
-
-Now, clone 
-
-Create and run a Virtual Environment to run the project, using Python 3.11.
+Create and activate a Virtual Environment to run the project, using Python 3.11.
 
 >  virtualenv -p=python3.11 venv
 > . venv/bin/activate
+
+Note: More installations might be needed to run the application depending on your OS. Feel free to install them as required.
+
+Now, clone the repository with the project
+
+> git clone https://github.com/EliasAuthier/qventus-takehome.git
+
+This should have created a qventus_takehome directory. Lets move inside it.
+
+> cd qventus_takehome
+
+A .env file has been created, in order to import configurations. You can easily create a new one by creating a .env from the .env.sample file in the same location
+
+> cp qventus_takehome/.env.sample qventus_takehome/.env
+
+Note: You will see that the .env file determines the DB user. If you have trouble reaching the DB with a different user like I did, feel free
+to switch to the root user (root:r00t)
+
+Now, install the VENV requirements
+
+> pip install -r requirements.txt
+
+Run the migrations so that the DB is ready
+
+> python manage.py migrate
+> python manage.py migrate parts
+
+And run the API on localhost, port 8000
+
+> python manage.py runserver
+
+The "Parts" CRUD can be tested by performing HTTP requests at 
+> http://localhost/api/parts/
+> http://localhost/api/parts/{id}
+
+And the "Top words on Parts description" functionality can be tested on 
+> http://localhost/api/parts/top_description_words
+
+If you want to run the tests, you can do so by running the following command:
+> python manage.py test
