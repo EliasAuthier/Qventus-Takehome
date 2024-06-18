@@ -61,7 +61,9 @@ And run the API on localhost, port 8000
 > python manage.py runserver
 
 The "Parts" CRUD can be tested by performing HTTP requests at 
+
 > http://localhost/api/parts/
+
 > http://localhost/api/parts/{id}
 
 And the "Top words on Parts description" functionality can be tested on 
