@@ -24,6 +24,7 @@ Create a Database for the API to use. In this case I have chosen a basic one nam
 Let's also install the mariadb-cli, needed by Django in order to stablish sessions with the DATABASE
 
 > sudo apt install mariadb-client-core-10.6
+
 Note: More installations might be needed to run the application depending on your OS. Feel free to install them as required.
 
 Now, clone 
