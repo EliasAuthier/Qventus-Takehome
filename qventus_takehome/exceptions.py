@@ -1,0 +1,2 @@
+class QventusSettingsException(Exception):
+    pass

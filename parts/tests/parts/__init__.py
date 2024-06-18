@@ -1,0 +1,3 @@
+from .test_action_endpoints import PartActionEndpointsTest
+from .test_controller import PartController
+from.test_crud_endpoints import PartCRUDEndpointsTest
